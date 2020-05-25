@@ -17,7 +17,7 @@ namespace laboratorna4
             gr.PersonProperty = new Person(gr.Name, gr.LastName + i, gr.Date);
             return gr;
         }
-        TestCollections(int elem)
+        public TestCollections(int elem)
         {
             for (int i = 0; i < elem; i++)
             {

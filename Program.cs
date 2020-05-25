@@ -13,12 +13,13 @@ namespace laboratorna4
     {
         static void Main()//string[] args
         {
+            int size = Positive();
             GraduateStudentCollection gst = new GraduateStudentCollection();
             gst.AddDefaults();
-            //##########################//Add elements to GraduateStudet//############################
+            //##########################//Add elements to GraduateStudetCollection//############################
             int amount = 10;
             GraduateStudet[] gradArr = new GraduateStudet[amount];
-            for (int i=0; i< amount; i++)
+            for (int i = 0; i < amount; i++)
             {
                 gradArr[i] = new GraduateStudet();
             }
@@ -48,6 +49,20 @@ namespace laboratorna4
             Console.WriteLine("Elements of GraduateStudentCollection sorted by learning year:###############################");
             gst.SortByLearningYear();
             Console.WriteLine(gst.ToString());
+            TestCollections testColl = new TestCollections(size);
+
+            static int Positive()
+            {
+                int size;
+                Console.WriteLine("Enter the size of collections:");
+                String temp = Console.ReadLine();
+                while (!(int.TryParse(temp, out size)) || size < 0)
+                {
+                    Console.Write("Enter the size of collections:");
+                    temp = Console.ReadLine();
+                }
+                return size;
+            }
         }
     }
 }
