@@ -14,7 +14,7 @@ namespace laboratorna4
         static GraduateStudet GenerateElement(int i)
         {
             GraduateStudet gr = new GraduateStudet();
-            gr.PersonProperty.LastName = gr.PersonProperty.LastName + i;
+            gr.PersonProperty = new Person(gr.Name, gr.LastName + i, gr.Date);
             return gr;
         }
         TestCollections(int elem)
