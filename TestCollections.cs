@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 
 namespace laboratorna4
 {
@@ -11,7 +10,7 @@ namespace laboratorna4
         List<string> stringList = new List<string>();
         Dictionary<Person, GraduateStudet> typedKVDictionary = new Dictionary<Person, GraduateStudet>();
         Dictionary<string, GraduateStudet> typedStringVDictionary = new Dictionary<string, GraduateStudet>();
-        static GraduateStudet GenerateElement(int i)
+        public static GraduateStudet GenerateElement(int i)
         {
             GraduateStudet gr = new GraduateStudet();
             gr.PersonProperty = new Person(gr.Name, gr.LastName + i, gr.Date);
@@ -28,7 +27,7 @@ namespace laboratorna4
                 typedStringVDictionary.Add(g.PersonProperty.ToString(), g);
             }
         }
-        public double CalculateTime(GraduateStudet g)
+        public void CalculateTime(GraduateStudet g)
         {
             Stopwatch stopWatch = new Stopwatch();
             stopWatch.Start();            
@@ -61,7 +60,6 @@ namespace laboratorna4
             stopWatch.Stop();
             TimeSpan ts6d = stopWatch.Elapsed;
             Console.WriteLine($"Time to find the element by value in Dictionary<string, GraduateStudet>: {ts6d}");
-            return 0.0;
         }
     }
 }
