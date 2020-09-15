@@ -30,33 +30,51 @@ namespace laboratorna4
         public void CalculateTime(GraduateStudet g)
         {
             Stopwatch stopWatch = new Stopwatch();
-            stopWatch.Start();            
-            PersonList.Contains(g.PersonProperty);
+            stopWatch.Start();
+            if (PersonList.Contains(g.PersonProperty))
+            {
+                Console.WriteLine("contains");
+            }
             stopWatch.Stop();
             TimeSpan ts1d = stopWatch.Elapsed;
             Console.WriteLine($"Time to find the element in list of persons: {ts1d}");
             stopWatch.Start();
-            stringList.Contains(g.PersonProperty.ToString());
+            if (stringList.Contains(g.PersonProperty.ToString()))
+            {
+                Console.WriteLine("contains");
+            }            
             stopWatch.Stop();
             TimeSpan ts2d = stopWatch.Elapsed;
             Console.WriteLine($"Time to find the element in list of strings: {ts2d}");
             stopWatch.Start();
-            typedKVDictionary.ContainsKey(g.PersonProperty);
+            if (typedKVDictionary.ContainsKey(g.PersonProperty))
+            {
+                Console.WriteLine("contains");
+            }
             stopWatch.Stop();
             TimeSpan ts3d = stopWatch.Elapsed;
             Console.WriteLine($"Time to find the element by key in Dictionary<Person, GraduateStudet>: {ts3d}");
             stopWatch.Start();
-            typedKVDictionary.ContainsValue(g);
+            if (typedKVDictionary.ContainsValue(g))
+            {
+                Console.WriteLine("contains");
+            }
             stopWatch.Stop();
             TimeSpan ts4d = stopWatch.Elapsed;
             Console.WriteLine($"Time to find the element by value in Dictionary<Person, GraduateStudet>: {ts4d}");
             stopWatch.Start();
-            typedStringVDictionary.ContainsKey(g.PersonProperty.ToString());
+            if (typedStringVDictionary.ContainsKey(g.PersonProperty.ToString()))
+            {
+                Console.WriteLine("contains");
+            }
             stopWatch.Stop();
             TimeSpan ts5d = stopWatch.Elapsed;
             Console.WriteLine($"Time to find the element by key in Dictionary<string, GraduateStudet>: {ts5d}");
             stopWatch.Start();
-            typedStringVDictionary.ContainsValue(g);
+            if (typedStringVDictionary.ContainsValue(g))
+            {
+                Console.WriteLine("contains");
+            }
             stopWatch.Stop();
             TimeSpan ts6d = stopWatch.Elapsed;
             Console.WriteLine($"Time to find the element by value in Dictionary<string, GraduateStudet>: {ts6d}");
